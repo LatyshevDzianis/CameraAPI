@@ -11,18 +11,14 @@ const BottomTollbar = ({
   takePicture,
   isPreviewMode,
   acceptPicture,
-  setFlash,
+  toggleFlash,
   retakePicture,
 }) => {
   return (
     <View style={styles.bottomToolBar}>
       {!isPreviewMode ? (
         <>
-          <FlashButton
-            onPress={() => setFlash(prev => !prev)}
-            color="white"
-            size={50}
-          />
+          <FlashButton onPress={toggleFlash} color="white" size={50} />
           <TakePhotoButton onPress={takePicture} color="white" size={50} />
           <Image
             borderRadius={50}

@@ -89,6 +89,8 @@ const App = () => {
     }
   }, []);
 
+  const toggleFlash = useCallback(() => setFlash(prev => !prev), []);
+
   return (
     <View style={styles.container}>
       <ReactNativeCamera setCamera={setCamera} flash={flash} />
@@ -100,7 +102,7 @@ const App = () => {
         setIsPreviewMode={setIsPreviewMode}
         retakePicture={retakePicture}
         acceptPicture={acceptPicture}
-        setFlash={setFlash}
+        toggleFlash={toggleFlash}
       />
     </View>
   );
